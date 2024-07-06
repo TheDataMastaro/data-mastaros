@@ -9,25 +9,41 @@
             font-family: Arial, sans-serif;
             background: url('background.jpg') no-repeat center center fixed;
             background-size: cover;
-            color: #fff;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            color: #fff;
+            position: relative;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 60px); /* Adjust height to prevent covering the footer */
+          
+            z-index: 1;
         }
         .container {
             display: flex;
             max-width: 1200px;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            position: relative;
+            z-index: 2;
+            margin-bottom: 60px; /* Add some margin at the bottom */
         }
         .content, .form-container {
             padding: 40px;
         }
         .content {
             flex: 2;
+        }
+        .content img {
+            max-width: 100px;
+            height: auto;
         }
         .form-container {
             flex: 1;
@@ -38,6 +54,7 @@
             justify-content: center;
             align-items: center;
             border-radius: 8px;
+            margin-bottom: 40px; /* Adjust margin to avoid overlapping with footer */
         }
         .form-container h2 {
             margin-bottom: 20px;
@@ -104,6 +121,7 @@
     </style>
 </head>
 <body>
+    <div class="overlay"></div>
     <div class="container">
         <div class="content">
             <img src="logo.png" alt="The Data Mastaro(s) Logo">
